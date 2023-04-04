@@ -66,7 +66,7 @@ namespace Sudoku.GeneticSharp
             Random random = new Random();
             if (value == -1)
             {
-                // Loop over 0 to lookupTable.Count randomly
+                // Loop a random number in lookupTable 
                 List<int> randomIndexes = Enumerable.Range(0, this.lookupTable.Count).ToList();
                 randomIndexes = randomIndexes.OrderBy(i => random.Next()).ToList();
                 foreach (int i in randomIndexes)
