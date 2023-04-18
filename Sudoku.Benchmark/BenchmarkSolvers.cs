@@ -59,7 +59,7 @@ namespace Sudoku.Benchmark
                     //.WithLaunchCount(1)
                     //.WithWarmupCount(1)
                     .WithIterationCount(3)
-                    .WithInvocationCount(3)
+                    .WithInvocationCount(8)
                 );
 
 
