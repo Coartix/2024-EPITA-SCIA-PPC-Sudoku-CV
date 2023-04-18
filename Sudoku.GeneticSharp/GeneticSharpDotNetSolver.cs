@@ -9,7 +9,7 @@ namespace Sudoku.GeneticSharp
 		{
 			var permutatedCellsChromosome = new SudokuOrderedCellsChromosome(s);
 			
-			var popSize = 500;
+			var popSize = 400;
 
 			// var crossover = new PartiallyMappedCrossover();
 			var crossover = new CycleCrossover();
@@ -36,7 +36,7 @@ namespace Sudoku.GeneticSharp
 		{
 			var permutatedCellsChromosome = new SudokuPermutatedCellsChromosome(s);
 
-			var popSize = 500;
+			var popSize = 400;
 
 			var crossover = new CycleCrossover();
 			//var crossover = new OrderedCrossover();
@@ -65,7 +65,7 @@ namespace Sudoku.GeneticSharp
         {
 	        var permutatedCellsChromosome = new SudokuPermutatedCellsChromosome(s);
 			
-			var popSize = 500;
+			var popSize = 400;
 
 
 			//var crossover = new CycleCrossover();
@@ -95,7 +95,7 @@ namespace Sudoku.GeneticSharp
 		{
 			var permutatedCellsChromosome = new SudokuPermutatedCellsChromosome(s);
 
-			var popSize = 500;
+			var popSize = 400;
 
 			//var crossover = new CycleCrossover();
 			var crossover = new OrderedCrossover();
@@ -128,7 +128,7 @@ namespace Sudoku.GeneticSharp
 			var permutatedCellsChromosome = new SudokuPermutationsChromosome(s);
 
 			
-			var popSize = 500;
+			var popSize = 400;
 			
 			//var crossover = new CycleCrossover();
 			// var crossover = new OrderedCrossover();
@@ -152,7 +152,7 @@ namespace Sudoku.GeneticSharp
 			var cellsChromosome = new SudokuCellsChromosome(s);
 
 		
-			var popSize = 500;
+			var popSize = 400;
 			var crossover = new UniformCrossover();
 			// var crossover = new OrderedCrossover();
 			
