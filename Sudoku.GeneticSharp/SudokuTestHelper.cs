@@ -73,7 +73,7 @@ namespace Sudoku.GeneticSharp
 	            {
 		            Termination = termination
 	            };
-                //Ajout d'opérateurs de parallélisation
+                //Ajout d'opï¿½rateurs de parallï¿½lisation
 	            ga.OperatorsStrategy = new TplOperatorsStrategy();
 	            ga.TaskExecutor = new TplTaskExecutor();
                 ga.GenerationRan+=(sender, args) => 
@@ -82,7 +82,7 @@ namespace Sudoku.GeneticSharp
 					var solutions = bestIndividual.GetSudokus();
 					bestSudoku = solutions[0];
 					nbErrors = bestSudoku.NbErrors(sudokuBoard);
-                    Console.WriteLine($"Generation {ga.GenerationsNumber}, population {ga.Population.CurrentGeneration.Chromosomes.Count}, nbErrors {nbErrors} Elapsed {sw.Elapsed - lastTime} Elapsed since initial Gen {sw.Elapsed}");
+                    // Console.WriteLine($"Generation {ga.GenerationsNumber}, population {ga.Population.CurrentGeneration.Chromosomes.Count}, nbErrors {nbErrors} Elapsed {sw.Elapsed - lastTime} Elapsed since initial Gen {sw.Elapsed}");
                     lastTime = sw.Elapsed;
 				};
 

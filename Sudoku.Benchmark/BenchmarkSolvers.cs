@@ -40,8 +40,8 @@ namespace Sudoku.Benchmark
     {
         public QuickBenchmarkSolversEasy()
         {
-            MaxSolverDuration = TimeSpan.FromSeconds(20);
-            NbPuzzles = 2;
+            MaxSolverDuration = TimeSpan.FromSeconds(60);
+            NbPuzzles = 4;
         }
         private class Config : ManualConfig
         {
@@ -58,9 +58,8 @@ namespace Sudoku.Benchmark
                     .WithRuntime(CoreRuntime.Core70)
                     //.WithLaunchCount(1)
                     //.WithWarmupCount(1)
-                    .WithIterationCount(1)
-                    .WithInvocationCount(1)
-
+                    .WithIterationCount(4)
+                    .WithInvocationCount(10)
                 );
 
 
@@ -78,7 +77,7 @@ namespace Sudoku.Benchmark
 
         public CompleteBenchmarkSolvers()
         {
-            MaxSolverDuration = TimeSpan.FromMinutes(5);
+            MaxSolverDuration = TimeSpan.FromMinutes(10);
         }
 
         private class Config : ManualConfig

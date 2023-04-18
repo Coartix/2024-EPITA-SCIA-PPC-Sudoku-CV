@@ -3,13 +3,13 @@ using Sudoku.Shared;
 
 namespace Sudoku.GeneticSharp
 {
-	public class GeneticOrderedCellsSolver : ISudokuSolver
+	public class OrderedCellsSolver : ISudokuSolver
 	{
 		public SudokuGrid Solve(SudokuGrid s)
 		{
 			var permutatedCellsChromosome = new SudokuOrderedCellsChromosome(s);
 			
-			var popSize = 400;
+			var popSize = 1000;
 
 			// var crossover = new PartiallyMappedCrossover();
 			var crossover = new CycleCrossover();
@@ -30,16 +30,13 @@ namespace Sudoku.GeneticSharp
 		}
 	}
 
-	public class GeneticPermutedCellsCycleTworsSolver : ISudokuSolver
+	public class PermCellsCycleTworsSolver : ISudokuSolver
 	{
 		public SudokuGrid Solve(SudokuGrid s)
 		{
 			var permutatedCellsChromosome = new SudokuPermutatedCellsChromosome(s);
 
-			var popSize = 400;
-
-
-
+			var popSize = 1000;
 
 			var crossover = new CycleCrossover();
 			//var crossover = new OrderedCrossover();
@@ -62,15 +59,13 @@ namespace Sudoku.GeneticSharp
 		}
 	}
 
-	public class GeneticPermutedCellsPartiallyMappedReverseSequenceSolver : ISudokuSolver
+	public class PermCellsPartiallyMappedReverseSequenceSolver : ISudokuSolver
     {
         public SudokuGrid Solve(SudokuGrid s)
         {
 	        var permutatedCellsChromosome = new SudokuPermutatedCellsChromosome(s);
 			
-			var popSize = 400;
-
-
+			var popSize = 1000;
 
 
 			//var crossover = new CycleCrossover();
@@ -94,16 +89,13 @@ namespace Sudoku.GeneticSharp
         }
     }
 
-	public class GeneticPermutedCellsOrderedInsertionSolver : ISudokuSolver
+	public class PermCellsOrderedInsertionSolver : ISudokuSolver
 	{
 		public SudokuGrid Solve(SudokuGrid s)
 		{
 			var permutatedCellsChromosome = new SudokuPermutatedCellsChromosome(s);
 
-			var popSize = 400;
-
-
-
+			var popSize = 1000;
 
 			//var crossover = new CycleCrossover();
 			var crossover = new OrderedCrossover();
@@ -128,7 +120,7 @@ namespace Sudoku.GeneticSharp
 
 
 
-	public class GeneticPermutationsSolver : ISudokuSolver
+	public class PermSolver : ISudokuSolver
 	{
 		public SudokuGrid Solve(SudokuGrid s)
 		{
@@ -136,7 +128,7 @@ namespace Sudoku.GeneticSharp
 			var permutatedCellsChromosome = new SudokuPermutationsChromosome(s);
 
 			
-			var popSize = 400;
+			var popSize = 1000;
 			
 			//var crossover = new CycleCrossover();
 			// var crossover = new OrderedCrossover();
@@ -152,22 +144,22 @@ namespace Sudoku.GeneticSharp
 	}
 
 
-	public class GeneticCellsSolver : ISudokuSolver
+	public class CellsSolver : ISudokuSolver
 	{
 		public SudokuGrid Solve(SudokuGrid s)
 		{
 
-			var permutatedCellsChromosome = new SudokuPermutationsChromosome(s);
+			var cellsChromosome = new SudokuCellsChromosome(s);
 
 		
-			var popSize = 400;
+			var popSize = 1000;
 			var crossover = new UniformCrossover();
 			// var crossover = new OrderedCrossover();
 			
 			var mutation = new UniformMutation();
 			// var mutation = new PartialShuffleMutation();
 
-			var sdkBoard = SudokuTestHelper.Eval(permutatedCellsChromosome, crossover, mutation, s, popSize);
+			var sdkBoard = SudokuTestHelper.Eval(cellsChromosome, crossover, mutation, s, popSize);
 
 			return sdkBoard;
 
